@@ -1,5 +1,6 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow, mount, render} from 'enzyme';
+// import {expect} from 'chai';
 
 
 import GuessCount from './guess-count';
@@ -10,9 +11,12 @@ describe('<GuessCount />', () => {
     });
 
     it("checking to see if you have made more than one guess", ()=>{
-        const wrapper = shallow(<GuessCount guessCount="2"/>);
-        expect(wrapper.contains(<h2 id="guessCount">)).toEqual(guesses);
+        const wrapper = render(<GuessCount guessCount={2}/>);
+        const result = wrapper.text()
+        console.log(result,wrapper)
+        const shal = shallow(<GuessCount guessCount={2}/>)
+        console.log(shal)
+        console.log(shal.find("#guessCount"))
+        expect(result).toContain("guesses");
     })
 })
-    //         wrapper.instance().setEditing(true);
-// expect(lists.length).toEqual(seedLists.length);

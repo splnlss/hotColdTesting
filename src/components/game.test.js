@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
+import {shallow, mount, render} from 'enzyme';
 
 import Game from './game';
 import Header from './header';
@@ -13,7 +13,10 @@ describe('<Game />', () => {
     });
 
     it("restarts the Game", () =>{
-
+      
+        //method to start game, callback(), function restarts
+        //shallow(<Header />)
+        //wrapper.find('button').simulate('click');
     });
     it("makes a guess");
     it("changes state with new guess and feedback")
@@ -23,7 +26,4 @@ describe('<Game />', () => {
 })
 
 
-// const wrapper = shallow(<AddForm />);
-//         wrapper.instance().setEditing(true);
-//         wrapper.update();
-//         expect(wrapper.hasClass('add-form')).toEqual(true);
+//
